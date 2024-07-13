@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#squad-builder, .player-card {
+  text-align: center;
+  font-family: "Bebas Neue";
+}
+
+#pitch-content * {
+  border: none;
+}
+
+
+.player-block h5 {
+  letter-spacing: 0.055em;
+}
+
+.modal-title {
+  font-size: 1.5em;
+  font-weight: 900;
+  text-shadow: 5px 7px 14px rgba(0, 0, 0, 0.5);
+}
+
+.player-shirt {
+  background: linear-gradient(to top, red 0%, rgba(255, 0, 0, 0) 100%);
+  box-shadow: 12px 22px 15px rgba(238, 1, 1, 0.3); 
+  border-radius: 25px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.player-shirt:hover {
+  box-shadow: 10px 20px 25px 4px rgb(255, 0, 0); 
+}
+
+.player-number {
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.player-name {
+  padding: 5px;
+  font-family: 'Archivo Black', sans-serif;
+  font-weight: bold;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  line-height: 1.1em !important;
+  font-size: 1em !important;
+  color: black;
+  box-shadow: 0px 5px 20px 5px rgb(0, 0, 0); 
+  border-radius: 5px;
+}
+
+.pickable-player-card {
+  color: #f70000;
+}
+
+@media (max-width: 768px) {
+  .player-name {
+      font-size: 0.7em !important;
+  }
+}
+
+.hide-on-capture {
+  display: none;
+}
+
+#bench-content {
+  background-color: rgb(255, 254, 254);
+}

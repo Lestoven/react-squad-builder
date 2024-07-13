@@ -1,0 +1,59 @@
+{
+    "position": {
+        "goalkeeper": "Kapus",
+        "defender": "Védő",
+        "midfielder": "Középpályás",
+        "attacker": "Támadó"
+    },
+    "positionPlural": {
+        "goalkeeper": "Kapusok",
+        "defender": "Védők",
+        "midfielder": "Középpályások",
+        "attacker": "Támadók"
+    },
+    "positionAdd": {
+        "goalkeeper": "Kapus <br/> hozzáadása",
+        "defender": "Védő <br/> hozzáadása",
+        "midfielder": "Középpályás <br/> hozzáadása",
+        "attacker": "Támadó <br/> hozzáadása"
+    },
+    "pitchTexts": {
+        "pickFormation": "Válasszon egy felállást"
+    },
+    "playerSelectModal": {
+        "addPlayer": "Hozzáadás a csapathoz",
+        "closeModal": "Bezár",
+        "noMore": "Nincs több játékos erre a pozícióra"
+    },
+    "substitutes": {
+        "substitutes" : "Cserék"
+    },
+    "informationModal": {
+        "wrongPosition": "Kérjük válasszon megfelelő posztot a játékosnak!",
+        "playersPosition": "posztja",
+        "positionError": ", ezért nem lehet {} posztra berakni"
+    },
+    "addPlayerToast": {
+        "cancelAddingPlayer": "Mégse",
+        "addingToSquad": "Hozzáadás a csapathoz: ",
+        "showSelectedPlayer": "Kiválasztott játékos",
+        "hideSelectedPlayer": "Kiválasztott játékos elrejtése"
+    },
+    "pitchH1": {
+        "buildYourDream": "Építsd ",
+        "buildYourSquad": "Fel A Győzetes Csapatodat."
+    },
+    "menu": {
+        "settings": "Beállítások",
+        "jerseyText": "Mez Felirat",
+        "number": "Mutasd a játékos mezszámát",
+        "position": "Mutasd a játékosok pozícióit",
+        "nothing": "Ne mutass semmit a mezeken",
+        "colors": "Színek beállítása",
+        "jerseyColor": "Mezek színe (kezdő 11)",
+        "textColor": "Mezek feliratának a színe (kezdő 11)"
+    },
+    "download": {
+        "download": "Kép letöltése"
+    }
+}

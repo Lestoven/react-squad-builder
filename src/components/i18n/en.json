@@ -1,0 +1,59 @@
+{
+    "position": {
+        "goalkeeper": "Goalkeeper",
+        "defender": "Defender",
+        "midfielder": "Midfielder",
+        "attacker": "Attacker"
+    },
+    "positionPlural": {
+        "goalkeeper": "Goalkeepers",
+        "defender": "Defenders",
+        "midfielder": "Midfielders",
+        "attacker": "Attackers"
+    },
+    "positionAdd": {
+        "goalkeeper": "Add Goalkeeper",
+        "defender": "Add Defender",
+        "midfielder": "Add Midfielder",
+        "attacker": "Add Attacker"
+    },
+    "pitchTexts": {
+        "pickFormation": "Pick a formation"
+    },
+    "playerSelectModal": {
+        "addPlayer": "Add to squad",
+        "closeModal": "Close",
+        "noMore": "There are no more players for this position"
+    },
+    "substitutes": {
+        "substitutes" : "Substitutes"
+    },
+    "informationModal": {
+        "wrongPosition": "Please select an appropriate position for the player!",
+        "playersPosition": "plays as",
+        "positionError": ", unable to assign him as {}"
+    },
+    "addPlayerToast": {
+        "cancelAddingPlayer": "Cancel",
+        "addingToSquad": "Adding to squad: ",
+        "showSelectedPlayer": "Show selected player",
+        "hideSelectedPlayer": "Hide selected player"
+    },
+    "pitchH1": {
+        "buildYourDream": "Build ",
+        "buildYourSquad": "Your Winning Squad."
+    },
+    "menu": {
+        "settings": "Settings",
+        "jerseyText": "Jersey Text",
+        "number": "Show jersey numbers",
+        "position": "Show position names",
+        "nothing": "Don't show anything on jersey",
+        "colors": "Set colors",
+        "jerseyColor": "Color of the jersey (starting XI)",
+        "textColor": "Color of the jersey's text (starting XI)"
+    },
+    "download": {
+        "download": "Download Image"
+    }
+}
