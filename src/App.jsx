@@ -131,7 +131,7 @@ const App = () => {
     }
   ]
   return (
-    <SquadBuilder players={players} defaultJerseyColor={"rgb(0,0,0)"} defaultJerseyTextColor={"#FFFF00"} lang={"en"}/>
+    <SquadBuilder players={players} defaultJerseyColor={"rgb(0,0,0)"} defaultJerseyTextColor={"#FFFF00"} lang={"hu"}/>
   )
 }
 export default App

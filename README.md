@@ -125,3 +125,19 @@ As the example shows, you can use both "rgb" and "hex" to define the default col
 Now the jersey look like this by default:
 
 ![Deafult jersey](deafultJersey2.jpg)
+
+### **Define deafult language**
+There are 2 languages available currently for the library (English/Hungarian)
+By deafult if "*lang*" is not provided when using "SquadBuilder" the app infers the user's language.
+
+For example, you can set the language to be English:
+```jsx
+<SquadBuilder players={players} defaultJerseyColor={"rgb(0,0,0)"} defaultJerseyTextColor={"#FFFF00"} lang={"en"}/>
+```
+Or, you can set the language to be Hungarian:
+
+```jsx
+<SquadBuilder players={players} defaultJerseyColor={"rgb(0,0,0)"} defaultJerseyTextColor={"#FFFF00"} lang={"hu"}/>
+```
+
+![Hungarian language set](huLang.jpg)
