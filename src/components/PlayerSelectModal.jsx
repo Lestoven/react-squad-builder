@@ -6,7 +6,7 @@ import { isSelected } from './utils';
 
 export default function PlayerSelectModal({ playerSelectModalOpen, setPlayerSelectModalOpen, currentPositionType, availablePlayers, addPlayerToPitch, selectedPlayers, lang }) {
     let suitablePlayers = availablePlayers.filter((player) => (player.positionType === currentPositionType ||
-        player["alternativePositions"].split(/[,;\/\s]+/).includes(currentPositionType)) && 
+        player["alternativePositions"].split(/[,;\/\s]+/).includes(currentPositionType)) &&
         isSelected(selectedPlayers, player) === false);
     return (
         <>
@@ -14,19 +14,19 @@ export default function PlayerSelectModal({ playerSelectModalOpen, setPlayerSele
                 <Modal.Header><span className="modal-title">{translate(`positionPlural.${currentPositionType}`, lang)}</span></Modal.Header>
                 <Modal.Body>
                     <div className="space-y-6">
-                        {suitablePlayers.length > 0 ? 
+                        {suitablePlayers.length > 0 ?
                             <div className="player-block grid grid-cols-2 md:grid-cols-3 gap-4">
                                 {suitablePlayers.map((player, id) => {
-                                        return (
-                                            <Fragment key={id}>
-                                                <PlayerCard player={player} id={id} lang={lang} onClickFunc={()=>{ setPlayerSelectModalOpen(false); addPlayerToPitch(player) }}/>
-                                            </Fragment>
-                                        )
-                                }) 
-                            
+                                    return (
+                                        <Fragment key={id}>
+                                            <PlayerCard player={player} id={id} lang={lang} onClickFunc={() => { setPlayerSelectModalOpen(false); addPlayerToPitch(player) }} />
+                                        </Fragment>
+                                    )
+                                })
+
                                 }
                             </div>
-                        :
+                            :
                             <div className="text-center text-2xl">
                                 <p>{translate("playerSelectModal.noMore", lang)}</p>
                             </div>

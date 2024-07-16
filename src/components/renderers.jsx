@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 import { getUserLanguage, translate } from './i18n/translate'
 import PositionOnPitch from './PositionOnPitch.jsx'
 
-export function renderPositions(playerPositions, selectedPlayers, selectedPlayerFromBench, 
+export function renderPositions(playerPositions, selectedPlayers, selectedPlayerFromBench,
     removePlayerFromPitch, screenWidth, handlePositionClick, shirtDisplayType, colorSettings, lang) {
     return (
 
@@ -18,10 +18,10 @@ export function renderPositions(playerPositions, selectedPlayers, selectedPlayer
                             right: `${screenWidth <= 768 ? position.right["mobile"] : position.right["desktop"]}%`,
                         }}
                         onClick={() => handlePositionClick(positionType, index)} >
-                
+
                         <PositionOnPitch selectedPlayerFromBench={selectedPlayerFromBench} playerOnPosition={playerOnPosition}
-                            removePlayerFromPitch={removePlayerFromPitch} index={index} addText={addText} shirtDisplayType={shirtDisplayType} 
-                            colorSettings={colorSettings} position={position}/>
+                            removePlayerFromPitch={removePlayerFromPitch} index={index} addText={addText} shirtDisplayType={shirtDisplayType}
+                            colorSettings={colorSettings} position={position} />
                     </div>
                 </Fragment>
             )

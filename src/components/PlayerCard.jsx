@@ -17,14 +17,14 @@ export default function PlayerCard({ player, id, onClickFunc, showPosition = tru
                     {showPosition === true ? <h6 className="mb-1 text-white">({translate(`position.${player["positionType"]}`, lang)})</h6> : <></>}
                 </div>
                 <div className="flex-grow" />
-                    <div className="flex justify-center items-center">
-                        <button className="px-2 py-1 md:px-3 md:py-2 text-sm font-medium text-center text-white bg-gradient-to-r from-red-600 via-purple-600 
+                <div className="flex justify-center items-center">
+                    <button className="px-2 py-1 md:px-3 md:py-2 text-sm font-medium text-center text-white bg-gradient-to-r from-red-600 via-purple-600 
                         to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 
                         shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg" onClick={onClickFunc}>
-                            <p>{translate("playerSelectModal.addPlayer", lang)}</p>
-                        </button>
-                    </div>
+                        <p>{translate("playerSelectModal.addPlayer", lang)}</p>
+                    </button>
                 </div>
+            </div>
         </div>
     )
 }
