@@ -35,7 +35,7 @@ export default function Pitch({ renderPositions, renderFormationSelector, availa
         const options = {
             style: {
                 border: 'none',
-                //padding: '0px',
+                // padding: '0px',
             }
         };
         hideElements(".remove-btn"); // Hide player remove circles while creating the image
@@ -93,10 +93,10 @@ export default function Pitch({ renderPositions, renderFormationSelector, availa
                     </div>
                     <div className="player-block md:col-span-1 space-y-6 border border-white rounded-md shadow mt-6" id="bench-content">
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-1 p-1 md:gap-4 md:pl-4 md:pr-4 md:pt-6">
-                            {availablePlayers.map((player, id) => { //Rendering player to the bench that are not in the starting XI
+                            {availablePlayers.map((player, id) => { // Rendering player to the bench that are not in the starting XI
                                 return (
                                     <Fragment key={id}>
-                                        {isSelected(selectedPlayers, player) === false ? //If we cant find it in the selectedPlayers(starting XI)
+                                        {isSelected(selectedPlayers, player) === false ? // If we cant find it in the selectedPlayers (starting XI)
                                             <PlayerCard player={player} id={id} onClickFunc={() => addPlayerFromBench(player)} showPosition={true} lang={lang} />
                                             :
                                             <></>

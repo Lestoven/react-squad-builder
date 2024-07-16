@@ -3,12 +3,12 @@ import { faPlus, faShirt, faCircleXmark } from '@fortawesome/free-solid-svg-icon
 import { DISPLAY_NUMBER, DISPLAY_POSITION } from './ShirtDisplayOptions'
 
 export default function PositionOnPitch({ selectedPlayerFromBench, playerOnPosition, removePlayerFromPitch, index, addText, shirtDisplayType, colorSettings, position }) {
-    if (playerOnPosition === undefined) { //If player hasn't added to the position yet
+    if (playerOnPosition === undefined) { // If player hasn't added to the position yet
         return (
             <>
                 <FontAwesomeIcon icon={faPlus} className="text-2xl md:text-4xl text-white absolute z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
                 {
-                    selectedPlayerFromBench === null ? //Selected Player is not null when user want to add a player from the bench to the squad
+                    selectedPlayerFromBench === null ? // Selected Player is not null when user want to add a player from the bench to the squad
                         <>
                             <FontAwesomeIcon icon={faShirt} className="text-6xl md:text-7xl text-black absolute z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
                             {
@@ -42,7 +42,7 @@ export default function PositionOnPitch({ selectedPlayerFromBench, playerOnPosit
     return (
         <>
             {
-                selectedPlayerFromBench === null ? //Selected Player is not null when user want to add a player from the bench to the squad
+                selectedPlayerFromBench === null ? // Selected Player is not null when user want to add a player from the bench to the squad
                 <>
                     <FontAwesomeIcon icon={faShirt} className="player-shirt text-6xl md:text-7xl absolute z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
                      style={{color: colorSettings["starterShirtColor"]}}/>

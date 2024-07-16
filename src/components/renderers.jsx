@@ -6,10 +6,10 @@ export function renderPositions(playerPositions, selectedPlayers, selectedPlayer
     removePlayerFromPitch, screenWidth, handlePositionClick, shirtDisplayType, colorSettings, lang) {
     return (
 
-        playerPositions.map((position, index) => { //mapping throught the positions
-            const positionType = position.positionType //Getting the type of the position (attacker/midfielder/defender/goalkeeper)
-            const addText = translate(`positionAdd.${positionType}`, lang) //Getting the translation of the add player label
-            const playerOnPosition = selectedPlayers.find(player => player.positionOnPitch == index); //Getting the player that has been added to this position(if not yet it's undefined)
+        playerPositions.map((position, index) => { // mapping throught the positions
+            const positionType = position.positionType // Getting the type of the position (attacker/midfielder/defender/goalkeeper)
+            const addText = translate(`positionAdd.${positionType}`, lang) // Getting the translation of the add player label
+            const playerOnPosition = selectedPlayers.find(player => player.positionOnPitch == index); // Getting the player that has been added to this position(if not yet it's undefined)
             return (
                 <Fragment key={index}>
                     <div key={index} className="player-on-pitch absolute cursor-pointer"
@@ -29,7 +29,7 @@ export function renderPositions(playerPositions, selectedPlayers, selectedPlayer
     )
 }
 
-export function renderFormationSelector(handleFormationChange, formationsData) { //rendering the formation selector when user can change the current formation
+export function renderFormationSelector(handleFormationChange, formationsData) { // rendering the formation selector when user can change the current formation
     return (
         <select onChange={handleFormationChange} id="countries" className="mt-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
                 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white 
