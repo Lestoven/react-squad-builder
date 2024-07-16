@@ -149,7 +149,7 @@ By default, the library does not contain any background color, so the color of t
 
 ![Pick a formation](pickFormation.jpg)
 
-You can define a default color by the prop "formationTextColor"
+You can define a default color with the prop "formationTextColor"
 
 For example: 
 ```jsx
