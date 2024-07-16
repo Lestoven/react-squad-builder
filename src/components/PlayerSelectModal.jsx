@@ -10,7 +10,7 @@ export default function PlayerSelectModal({ playerSelectModalOpen, setPlayerSele
         isSelected(selectedPlayers, player) === false);
     return (
         <>
-            <Modal show={playerSelectModalOpen} onClose={() => setPlayerSelectModalOpen(false)}>
+            <Modal className="squad-builder-tailwind" show={playerSelectModalOpen} onClose={() => setPlayerSelectModalOpen(false)}>
                 <Modal.Header><span className="modal-title">{translate(`positionPlural.${currentPositionType}`)}</span></Modal.Header>
                 <Modal.Body>
                     <div className="space-y-6">

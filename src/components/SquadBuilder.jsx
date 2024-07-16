@@ -5,7 +5,9 @@ import './index.css'
 export default function SquadBuilder({players}) {
   return (
     <>
-      <App players={players}/>
+      <div className="squad-builder-tailwind">
+        <App players={players}/>
+      </div>
       <link href="https://fonts.googleapis.com/css2?family=Haettenschweiler&display=swap" rel="stylesheet" />
       <link href="https://fonts.googleapis.com/css2?family=Bebas Neue:wght@400;500;700&display=swap" rel="stylesheet" />
       <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet" />

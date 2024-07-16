@@ -8,5 +8,6 @@ export default {
     extend: {},
   },
   plugins: [require('flowbite/plugin')],
+  important: '.squad-builder-tailwind'
 }
 

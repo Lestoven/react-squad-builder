@@ -16,7 +16,7 @@ export default function InformationModal({ informationModalOpen, setInformationM
     }
     
     return (
-            <Modal className="modal" show={informationModalOpen} onClose={() => setInformationModalOpen(false)}>
+            <Modal className="modal squad-builder-tailwind" show={informationModalOpen} onClose={() => setInformationModalOpen(false)}>
                 <Modal.Header><span className="font-bold text-2xl">{modalTitle}</span></Modal.Header>
                 <Modal.Body>
                     <div className="text-center">
