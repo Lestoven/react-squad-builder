@@ -1,7 +1,7 @@
 # React squad builder
 
 ## About the library
-The **"react-squad-builder"** library simplifies the creation of a football starting XI. It offers a pitch featuring players and a bench. Users can easily add or swap players on the pitch. Simply include the component and define the players, the component handles the rest.
+The **"react-squad-builder"** library simplifies the creation of a football starting XI. It offers a pitch featuring players and a bench. Users can easily add or swap players on the pitch. Simply include the component and define the players, the component handles the rest. *The library is responsive, which means it also works properly on mobile devices.*
 
 ## The library provides:
 * various formations,
@@ -131,6 +131,19 @@ As the example shows, you can use both "rgb" and "hex" to define the default col
 Now the jersey look like this by default:
 
 ![Deafult jersey](deafultJersey2.jpg)
+
+### **Define deafult "formation text" color**
+By default, the library does not contain any background color, so the color of the "Pick a formation" text has a black color so that it appears on a white background. But it often happens that we want to place the component on a background of a different color, and then the text is not visible. Therefore, it is possible to set the color of the "Pick a formation" text to a default color.
+
+![Pick a formation](pickFormation.jpg)
+
+You can define a default color by the prop "formationTextColor"
+
+For example: 
+```jsx
+<SquadBuilder players={players} defaultJerseyColor={"rgb(0,0,0)"} defaultJerseyTextColor={"#FFFF00"} formationTextColor="#FF0000" lang="en"/>
+```
+![Pick a formation](pickFormationRed.jpg)
 
 ### **Define deafult language**
 There are 2 languages available currently for the library (English/Hungarian)

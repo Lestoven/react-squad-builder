@@ -7,7 +7,7 @@ import SettingsModal from './SettingsModal.jsx'
 import { DISPLAY_NUMBER } from './ShirtDisplayOptions.js'
 import { availableFormations } from './formations.js'
 
-function App({players, defaultJerseyColor, defaultJerseyTextColor, lang}) {
+function App({players, defaultJerseyColor, defaultJerseyTextColor, formationTextColor, lang,}) {
     const [selectedFormation, setSelectedFormation] = useState("") // The current selected formation
     const [formationsData, setFormationsData] = useState([]) // The available formations and their data
     const [playerPositions, setPlayerPositions] = useState([]) // The positions of the palyers on the pitch (For example which position to render the GK to)
@@ -106,8 +106,8 @@ function App({players, defaultJerseyColor, defaultJerseyTextColor, lang}) {
             <Pitch renderPositions={() => renderPositions(playerPositions, selectedPlayers, selectedPlayerFromBench, removePlayerFromPitch, screenWidth, 
                 handlePositionClick, shirtDisplayType, colorSettings, lang)} 
                  renderFormationSelector={() => renderFormationSelector(handleFormationChange, formationsData)}
-                 availablePlayers={availablePlayers} selectedPlayers={selectedPlayers} selectedPlayerFromBench={selectedPlayerFromBench} lang={lang}
-                  setSelectedPlayerFromBench={setSelectedPlayerFromBench} isToastOpen={isToastOpen} setIsToastOpen={setIsToastOpen} setSettingsModalOpen={setSettingsModalOpen} />
+                 availablePlayers={availablePlayers} selectedPlayers={selectedPlayers} selectedPlayerFromBench={selectedPlayerFromBench} formationTextColor={formationTextColor} 
+                 lang={lang} setSelectedPlayerFromBench={setSelectedPlayerFromBench} isToastOpen={isToastOpen} setIsToastOpen={setIsToastOpen} setSettingsModalOpen={setSettingsModalOpen} />
             <PlayerSelectModal playerSelectModalOpen={playerSelectModalOpen} setPlayerSelectModalOpen={setPlayerSelectModalOpen} currentPositionType={currentPositionType}
                 availablePlayers={availablePlayers} addPlayerToPitch={addPlayerToPitch} selectedPlayers={selectedPlayers} lang={lang}/>
             <InformationModal informationModalOpen={informationModalOpen} setInformationModalOpen={setInformationModalOpen}

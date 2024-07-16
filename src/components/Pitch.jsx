@@ -11,7 +11,7 @@ import footballPitchMobile from "./assets/football_pitch_mobile.svg"
 import footballPitchDesktop from "./assets/football_pitch_cropped.png"
 
 export default function Pitch({ renderPositions, renderFormationSelector, availablePlayers, selectedPlayers, selectedPlayerFromBench,
-    setSelectedPlayerFromBench, isToastOpen, setIsToastOpen, setSettingsModalOpen, lang }) {
+    setSelectedPlayerFromBench, isToastOpen, setIsToastOpen, setSettingsModalOpen, formationTextColor, lang  }) {
 
     const addPlayerFromBench = (player) => {
         setSelectedPlayerFromBench(player)
@@ -61,7 +61,7 @@ export default function Pitch({ renderPositions, renderFormationSelector, availa
             <div className="flex items-center justify-center mt-2 md:mt-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-0 no-gap">
                     <div className="md:col-span-1 items-center justify-center">
-                        <label htmlFor="countries" className="text-lg text-black font-bold">{translate("pitchTexts.pickFormation", lang)}</label>
+                        <label htmlFor="countries" className="text-lg font-bold" style={{ color: formationTextColor }}>{translate("pitchTexts.pickFormation", lang)}</label>
                         {renderFormationSelector()}
                     </div>
                     <div className="mt-2 md:col-span-1 flex items-end justify-center">
