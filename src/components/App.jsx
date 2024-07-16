@@ -6,7 +6,7 @@ import InformationModal from './InformationModal.jsx'
 import SettingsModal from './SettingsModal.jsx'
 import { DISPLAY_NUMBER } from './ShirtDisplayOptions.js'
 
-function App({players}) {
+function App({players, defaultJerseyColor, defaultJerseyTextColor, lang}) {
     const [selectedFormation, setSelectedFormation] = useState("") //The current selected formation
     const [formationsData, setFormationsData] = useState([]) //The available formations 
     const [playerPositions, setPlayerPositions] = useState([]) //The position on the pitch
@@ -26,7 +26,7 @@ function App({players}) {
     const [isToastOpen, setIsToastOpen] = useState(false) //Toast that showing player that we want add from the bench to the startign XI(selected players)
     const [shirtDisplayType, setShirtDisplayType] = useState(DISPLAY_NUMBER) //State to store what to display on the shirt(shirt Number or Postition like ST)
 
-    const [colorSettings, setColorSettings] = useState({starterShirtColor: "#9B1C1C", shirtTextColor: "#FFFFFF"})
+    const [colorSettings, setColorSettings] = useState({starterShirtColor: defaultJerseyColor, shirtTextColor: defaultJerseyTextColor})
 
     const [screenWidth, setScreenWidth] = useState(window.innerWidth)
     const [screenHeight, setScreenHeight] = useState(window.innerHeight)
@@ -102,16 +102,16 @@ function App({players}) {
     return (
         <div id="squad-builder">
             <Pitch renderPositions={() => renderPositions(playerPositions, selectedPlayers, selectedPlayerFromBench, removePlayerFromPitch, screenWidth, 
-                handlePositionClick, shirtDisplayType, colorSettings)} 
+                handlePositionClick, shirtDisplayType, colorSettings, lang)} 
                  renderFormationSelector={() => renderFormationSelector(handleFormationChange, formationsData)}
-                 availablePlayers={availablePlayers} selectedPlayers={selectedPlayers} selectedPlayerFromBench={selectedPlayerFromBench}
+                 availablePlayers={availablePlayers} selectedPlayers={selectedPlayers} selectedPlayerFromBench={selectedPlayerFromBench} lang={lang}
                   setSelectedPlayerFromBench={setSelectedPlayerFromBench} isToastOpen={isToastOpen} setIsToastOpen={setIsToastOpen} setSettingsModalOpen={setSettingsModalOpen} />
             <PlayerSelectModal playerSelectModalOpen={playerSelectModalOpen} setPlayerSelectModalOpen={setPlayerSelectModalOpen} currentPositionType={currentPositionType}
-                availablePlayers={availablePlayers} addPlayerToPitch={addPlayerToPitch} selectedPlayers={selectedPlayers} />
+                availablePlayers={availablePlayers} addPlayerToPitch={addPlayerToPitch} selectedPlayers={selectedPlayers} lang={lang}/>
             <InformationModal informationModalOpen={informationModalOpen} setInformationModalOpen={setInformationModalOpen}
-                informationModalType={informationModalType} informationModalMessage={informationModalMessage} />
+                informationModalType={informationModalType} informationModalMessage={informationModalMessage} lang={lang}/>
             <SettingsModal settingsModalOpen={settingsModalOpen} setSettingsModalOpen={setSettingsModalOpen}
-                shirtDisplayType={shirtDisplayType} setShirtDisplayType={setShirtDisplayType} colorSettings={colorSettings} setColorSettings={setColorSettings} />
+                shirtDisplayType={shirtDisplayType} setShirtDisplayType={setShirtDisplayType} colorSettings={colorSettings} setColorSettings={setColorSettings} lang={lang}/>
         </div>
     )
 }

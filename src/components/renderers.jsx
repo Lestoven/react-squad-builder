@@ -3,12 +3,12 @@ import { getUserLanguage, translate } from './i18n/translate'
 import PositionOnPitch from './PositionOnPitch.jsx'
 
 export function renderPositions(playerPositions, selectedPlayers, selectedPlayerFromBench, 
-    removePlayerFromPitch, screenWidth, handlePositionClick, shirtDisplayType, colorSettings) {
+    removePlayerFromPitch, screenWidth, handlePositionClick, shirtDisplayType, colorSettings, lang) {
     return (
 
         playerPositions.map((position, index) => { //mapping throught the positions
             const positionType = position.positionType //Getting the type of the position (attacker/midfielder/defender/goalkeeper)
-            const addText = translate(`positionAdd.${positionType}`) //Getting the translation of the add player label
+            const addText = translate(`positionAdd.${positionType}`, lang) //Getting the translation of the add player label
             const playerOnPosition = selectedPlayers.find(player => player.positionOnPitch == index); //Getting the player that has been added to this position(if not yet it's undefined)
             return (
                 <Fragment key={index}>

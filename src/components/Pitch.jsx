@@ -10,7 +10,7 @@ import domtoimage from 'dom-to-image-more';
 
 
 export default function Pitch({ renderPositions, renderFormationSelector, availablePlayers, selectedPlayers, selectedPlayerFromBench, 
-    setSelectedPlayerFromBench, isToastOpen, setIsToastOpen, setSettingsModalOpen }) {
+    setSelectedPlayerFromBench, isToastOpen, setIsToastOpen, setSettingsModalOpen, lang }) {
 
     const addPlayerFromBench = (player) => {
         setSelectedPlayerFromBench(player)
@@ -61,7 +61,7 @@ export default function Pitch({ renderPositions, renderFormationSelector, availa
             <div className="flex items-center justify-center mt-2 md:mt-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-0 no-gap">
                     <div className="md:col-span-1 items-center justify-center"> 
-                        <label htmlFor="countries" className="text-lg font-medium text-black">{translate("pitchTexts.pickFormation")}</label>
+                        <label htmlFor="countries" className="text-lg font-medium text-black">{translate("pitchTexts.pickFormation", lang)}</label>
                         {renderFormationSelector()}
                     </div>
                     <div className="mt-2 md:col-span-1 flex items-end justify-center">
@@ -69,12 +69,12 @@ export default function Pitch({ renderPositions, renderFormationSelector, availa
                          hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg
                           shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 
                           py-2.5 text-center me-2 mb-2" onClick={(e) => {e.target.blur(); setSettingsModalOpen(true)}}>
-                            {translate("menu.settings")} &nbsp;<FontAwesomeIcon icon={faSliders} className="text-black text-2xl md:text-lg" /></button>
+                            {translate("menu.settings", lang)} &nbsp;<FontAwesomeIcon icon={faSliders} className="text-black text-2xl md:text-lg" /></button>
 
                             <button className="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4
                              focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 
                              font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2" onClick={handleSave}>
-                                {translate("download.download")} &nbsp;<FontAwesomeIcon icon={faDownload} className="text-black text-2xl md:text-lg" /></button>
+                                {translate("download.download", lang)} &nbsp;<FontAwesomeIcon icon={faDownload} className="text-black text-2xl md:text-lg" /></button>
                     </div>
                 </div>
             </div>
@@ -97,7 +97,7 @@ export default function Pitch({ renderPositions, renderFormationSelector, availa
                                     return(
                                         <Fragment key={id}>
                                             {isSelected(selectedPlayers, player) === false ? //If we cant find it in the selectedPlayers(starting XI)
-                                                <PlayerCard player={player} id={id} onClickFunc={() => addPlayerFromBench(player)} showPosition={true}/>
+                                                <PlayerCard player={player} id={id} onClickFunc={() => addPlayerFromBench(player)} showPosition={true} lang={lang}/>
                                             :
                                             <></>
                                             }
@@ -105,11 +105,11 @@ export default function Pitch({ renderPositions, renderFormationSelector, availa
                                     )
                             })}
                         </div>
-                        <h2 className="font-extrabold pb-4 text-3xl text-black">{translate("substitutes.substitutes")}</h2>
+                        <h2 className="font-extrabold pb-4 text-3xl text-black">{translate("substitutes.substitutes", lang)}</h2>
                     </div>
                 </div>
             </div>
-            <AddPlayerToast isOpen={isToastOpen} setIsOpen={setIsToastOpen} player={selectedPlayerFromBench} setSelectedPlayerFromBench={setSelectedPlayerFromBench}/>
+            <AddPlayerToast isOpen={isToastOpen} setIsOpen={setIsToastOpen} player={selectedPlayerFromBench} setSelectedPlayerFromBench={setSelectedPlayerFromBench} lang={lang}/>
         </>
     )
 }

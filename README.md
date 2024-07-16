@@ -3,7 +3,7 @@
 ## About the library
 The **"react-squad-builder"** library simplifies the creation of a football starting XI. It offers a pitch featuring players and a bench. Users can easily add or swap players on the pitch. Simply include the component and define the players, the component handles the rest.
 
-## Functions:
+## The library provides:
 * various formations,
 * customizable jersey color,
 * customizable jersey text color,
@@ -11,10 +11,10 @@ The **"react-squad-builder"** library simplifies the creation of a football star
 * saving of the starting XI as an image,
 * easy to add additional translations
 
-![alt text](squad_builder.jpg)
-![alt text](squad_builder2.png)
+![Squad Builder app](squad_builder.jpg)
+![Squad Builder saved staring XI](squad_builder2.png)
 
-## Usage
+## **Important Details**
 ### Define the players
 
 You can define players as JSON, for example:
@@ -29,7 +29,7 @@ You can define players as JSON, for example:
 ```
 <hr>
 
-### **Positions**
+### **About Positions**
 There are *4 types* of positions defined: 
 1. goalkeeper
 2. defender
@@ -55,7 +55,10 @@ There are players in the world of football who can be used in different areas of
 
 <br>
 
-### Import the library, in the file you want to use the component
+## **Usage**
+You need to import the "SquadBuilder" component and use it (the "SquadBuilder" component provides the pitch and the bench). It's exactly as simple as it sounds.
+
+### Import the "SquadBuilder" component, in the file where you want to use the component
 ```jsx
 import SquadBuilder from './components/SquadBuilder'
 ```
@@ -75,12 +78,12 @@ const players = [
 ]
 ```
 
-### In the same file define the component
+### In the same file use the component
 ```jsx
 <SquadBuilder players={players} />
 ```
 
-### The whole file
+### The file should look something like this
 ```jsx
 import SquadBuilder from './components/SquadBuilder'
 
@@ -102,3 +105,23 @@ const YourComponent = () => {
 }
 export default YourComponent
 ```
+
+## Customizations
+
+### **Define deafult jersey colors**
+This is the basic jersey coloring.
+
+![Deafult jersey](deafultJersey.jpg)
+
+You are able to change the jersy's background color and the color of the text on the jersy by defining the "defaultJerseyColor" or the "defaultJerseyTextColor"
+
+Example:
+```jsx
+ <SquadBuilder players={players} defaultJerseyColor={"rgb(0,0,0)"} defaultJerseyTextColor={"#FFFF00"}/>
+```
+As the example shows, you can use both "rgb" and "hex" to define the default color
+(User is able to change these colors in the built in "settings")
+
+Now the jersey look like this by default:
+
+![Deafult jersey](deafultJersey2.jpg)

@@ -2,16 +2,12 @@ import React from 'react'
 import App from './App'
 import './index.css'
 
-export default function SquadBuilder({players}) {
+export default function SquadBuilder({players, defaultJerseyColor = "#9B1C1C", defaultJerseyTextColor = "#FFFFFF", lang=null}) {
   return (
     <>
       <div className="squad-builder-tailwind">
-        <App players={players}/>
+        <App players={players} defaultJerseyColor={defaultJerseyColor} defaultJerseyTextColor={defaultJerseyTextColor} lang={lang}/>
       </div>
-      <link href="https://fonts.googleapis.com/css2?family=Haettenschweiler&display=swap" rel="stylesheet" />
-      <link href="https://fonts.googleapis.com/css2?family=Bebas Neue:wght@400;500;700&display=swap" rel="stylesheet" />
-      <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet" />
-      <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;500;700&display=swap" rel="stylesheet" />
     </>
   )
 }
