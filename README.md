@@ -80,7 +80,13 @@ const players = [
       "name": "Gianluigi Donnarumma",
       "shirtNumber": 21
     },
-    ...
+    {
+      "id": 2,
+      "positionType": "midfielder",
+      "alternativePositions": "attacker",
+      "name": "Dominik Szoboszlai",
+      "shirtNumber": 8
+    }
 ]
 ```
 
@@ -103,7 +109,13 @@ const YourComponent = () => {
       "name": "Gianluigi Donnarumma",
       "shirtNumber": 21
     },
-    ...
+    {
+      "id": 2,
+      "positionType": "midfielder",
+      "alternativePositions": "attacker",
+      "name": "Dominik Szoboszlai",
+      "shirtNumber": 8
+    }
   ]
   return (
     <SquadBuilder players={players} />
@@ -141,7 +153,7 @@ You can define a default color by the prop "formationTextColor"
 
 For example: 
 ```jsx
-<SquadBuilder players={players} defaultJerseyColor={"rgb(0,0,0)"} defaultJerseyTextColor={"#FFFF00"} formationTextColor="#FF0000" lang="en"/>
+<SquadBuilder players={players} formationTextColor="#FF0000" lang="en"/>
 ```
 ![Pick a formation](pickFormationRed.jpg)
 
@@ -149,14 +161,14 @@ For example:
 There are 2 languages available currently for the library (English/Hungarian)
 By deafult if "*lang*" is not provided when using "SquadBuilder" the app infers the user's language.
 
-For example, you can set the language to be English:
+For example, you can set the language to English:
 ```jsx
-<SquadBuilder players={players} defaultJerseyColor={"rgb(0,0,0)"} defaultJerseyTextColor={"#FFFF00"} lang={"en"}/>
+<SquadBuilder players={players} lang={"en"}/>
 ```
-Or, you can set the language to be Hungarian:
+Or you can set the language to Hungarian:
 
 ```jsx
-<SquadBuilder players={players} defaultJerseyColor={"rgb(0,0,0)"} defaultJerseyTextColor={"#FFFF00"} lang={"hu"}/>
+<SquadBuilder players={players} lang={"hu"}/>
 ```
 
 ![Hungarian language set](huLang.jpg)
