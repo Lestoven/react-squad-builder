@@ -7,7 +7,7 @@ import { isSelected } from './utils.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSliders, faDownload } from '@fortawesome/free-solid-svg-icons'
 import domtoimage from 'dom-to-image-more';
-import footballPitchMobile from "./assets/football_pitch_full.jpg"
+import footballPitchMobile from "./assets/football_pitch_mobile.svg"
 import footballPitchDesktop from "./assets/football_pitch_cropped.png"
 
 export default function Pitch({ renderPositions, renderFormationSelector, availablePlayers, selectedPlayers, selectedPlayerFromBench,
