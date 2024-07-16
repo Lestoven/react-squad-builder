@@ -69,7 +69,7 @@ const players = [
     {
       "id": 1,                      // Id of the player, has to be unique
       "positionType": "goalkeeper", // The type of the player's position
-                                    //(goalkeeper/defender/midfielder/attacker)
+                                    // (goalkeeper/defender/midfielder/attacker)
       "alternativePositions": "",   // additional positions can be listed separated by ", "/" or ";"
       "name": "Gianluigi Donnarumma",
       "shirtNumber": 21
