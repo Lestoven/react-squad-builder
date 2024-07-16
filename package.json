@@ -1,12 +1,10 @@
 {
   "name": "react-squad-builder",
   "private": false,
-  "version": "0.0.4",
+  "version": "0.0.7",
   "type": "module",
   "files": [
-    "dist",
-    "src",
-    "components"
+    "dist"
   ],
   "description": "React library designed to simplify the process of creating and managing a football (soccer) starting lineup.",
   "repository": {
@@ -63,6 +61,7 @@
     ".": {
       "import": "./dist/react-squad-builder.es.js",
       "require": "./dist/react-squad-builder.umd.js"
-    }
+    },
+    "./dist/style.css": "./dist/style.css"
   }
 }
