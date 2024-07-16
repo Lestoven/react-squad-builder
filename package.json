@@ -1,7 +1,7 @@
 {
   "name": "react-squad-builder",
   "private": false,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "files": ["dist"],
   "description": "React library designed to simplify the process of creating and managing a football (soccer) starting lineup.",
