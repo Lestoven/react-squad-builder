@@ -60,7 +60,7 @@ You need to import the "SquadBuilder" component and use it (the "SquadBuilder" c
 
 ### Import the "SquadBuilder" component, in the file where you want to use the component
 ```jsx
-import SquadBuilder from './components/SquadBuilder'
+import SquadBuilder from 'react-squad-builder'
 ```
 
 ### Define the players you want to include
@@ -85,7 +85,7 @@ const players = [
 
 ### The file should look something like this
 ```jsx
-import SquadBuilder from './components/SquadBuilder'
+import SquadBuilder from 'react-squad-builder'
 
 const YourComponent = () => {
 

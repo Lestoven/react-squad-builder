@@ -7,7 +7,8 @@ import { isSelected } from './utils.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSliders, faDownload } from '@fortawesome/free-solid-svg-icons'
 import domtoimage from 'dom-to-image-more';
-
+import footballPitchMobile from "./assets/football_pitch_full.jpg"
+import footballPitchDesktop from "./assets/football_pitch_cropped.png"
 
 export default function Pitch({ renderPositions, renderFormationSelector, availablePlayers, selectedPlayers, selectedPlayerFromBench,
     setSelectedPlayerFromBench, isToastOpen, setIsToastOpen, setSettingsModalOpen, lang }) {
@@ -84,8 +85,8 @@ export default function Pitch({ renderPositions, renderFormationSelector, availa
                     <div className="md:col-span-2 football-pitch flex items-center justify-center mt-1" id="pitch-content">
                         <div className="wrapper flex justify-content-center">
                             <div className="relative">
-                                <img src="football_pitch_full.jpg" alt="Soccer Pitch" className="block md:hidden h-screen object-cover" />
-                                <img src="football_pitch_cropped.png" alt="Soccer Pitch" className="hidden md:block rounded-md h-screen object-cover p-2" />
+                                <img src={footballPitchMobile} alt="Soccer Pitch" className="block md:hidden h-screen object-cover" />
+                                <img src={footballPitchDesktop} alt="Soccer Pitch" className="hidden md:block rounded-md h-screen object-cover p-2" />
                                 {renderPositions()}
                             </div>
                         </div>
