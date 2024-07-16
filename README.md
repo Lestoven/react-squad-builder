@@ -56,7 +56,13 @@ There are players in the world of football who can be used in different areas of
 <br>
 
 ## **Usage**
-You need to import the "SquadBuilder" component and use it (the "SquadBuilder" component provides the pitch and the bench). It's exactly as simple as it sounds.
+You need to install the package, import the "SquadBuilder" component and use it (the "SquadBuilder" component provides the pitch and the bench). It's exactly as simple as it sounds.
+
+### Install the package via. npm
+Enter this line in your terminal
+```ps
+npm i react-squad-builder
+```
 
 ### Import the "SquadBuilder" component, in the file where you want to use the component
 ```jsx
