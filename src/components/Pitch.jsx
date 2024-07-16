@@ -53,7 +53,6 @@ export default function Pitch({ renderPositions, renderFormationSelector, availa
             .catch(function (error) {
                 console.error('oops, something went wrong!', error);
             });
-
     }
 
     return (
@@ -61,7 +60,7 @@ export default function Pitch({ renderPositions, renderFormationSelector, availa
             <div className="flex items-center justify-center mt-2 md:mt-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-0 no-gap">
                     <div className="md:col-span-1 items-center justify-center">
-                        <label htmlFor="countries" className="text-lg font-medium text-black">{translate("pitchTexts.pickFormation", lang)}</label>
+                        <label htmlFor="countries" className="text-lg text-black font-bold">{translate("pitchTexts.pickFormation", lang)}</label>
                         {renderFormationSelector()}
                     </div>
                     <div className="mt-2 md:col-span-1 flex items-end justify-center">

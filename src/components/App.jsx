@@ -5,6 +5,7 @@ import { renderPositions, renderFormationSelector } from './renderers.jsx'
 import InformationModal from './InformationModal.jsx'
 import SettingsModal from './SettingsModal.jsx'
 import { DISPLAY_NUMBER } from './ShirtDisplayOptions.js'
+import { availableFormations } from './formations.js'
 
 function App({players, defaultJerseyColor, defaultJerseyTextColor, lang}) {
     const [selectedFormation, setSelectedFormation] = useState("") // The current selected formation
@@ -90,11 +91,11 @@ function App({players, defaultJerseyColor, defaultJerseyTextColor, lang}) {
     }
 
     useEffect(() => { // loading the formations and setting some default values
-        fetch("formations.json")
-            .then(response => response.json())
-            .then(data => { let jsonData = Object.entries(data); setFormationsData(data); setPlayerPositions(jsonData[0][1]["positions"]); setSelectedFormation(jsonData[0][0]) })
-            .catch(error => console.error('Error fetching formations:', error))
-
+       try {
+        let jsonData = Object.entries(availableFormations); setFormationsData(availableFormations); setPlayerPositions(jsonData[0][1]["positions"]); setSelectedFormation(jsonData[0][0])
+       } catch(error) {
+        console.error('Error loading formations:', error)
+       }
         //We need to determine the screen size in order to show the correct pitch on desktop and mobile(mobile one is different)
         window.addEventListener("resize", updateDimensions)
         return () => window.removeEventListener("resize", updateDimensions)
