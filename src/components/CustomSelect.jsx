@@ -1,12 +1,13 @@
 import { useState, useRef, useEffect } from "react"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 
-export default function CustomSelect({formationsData}) {
-
+export default function CustomSelect({formationsData, handleFormationChange}) {
     const [isOpen, setIsOpen] = useState(false);
     const selectBodyRef = useRef(null); // the ref "pointing" to the select's body, in order to determine if we click inside or outside of it
     const selectButtonRef = useRef(null); // the ref "pointing" to the select's triggering button
     
-    const [selectTitle, setSelectTitle] = useState("Default Title");
+    const [selectedFormation, setSelectedFormation] = useState(null);
 
     const openSelectMenu = () => {
        setIsOpen(!isOpen);
@@ -21,8 +22,10 @@ export default function CustomSelect({formationsData}) {
     }
 
     const handleElementClick = (e) => {
-        setSelectTitle(e.target.textContent)
-        setIsOpen(false)
+        const newFormation = e.target.textContent;
+        handleFormationChange(newFormation);
+        setSelectedFormation(newFormation);
+        setIsOpen(false);
     }
 
     useEffect(() => {
@@ -36,36 +39,48 @@ export default function CustomSelect({formationsData}) {
         };
         
     }, [isOpen]) // isOpen state change will trigger it
-    
+
+    // Group formation by the number of the defenders: {"3" : ["3-5-2", "3-4-1", ...], "4": ["4-3-3", "4-4-2", ...]}
+    let formationsGrouped = {} 
+    formationsData.map((formation) => {
+        if(formation[0] in formationsGrouped) {
+            formationsGrouped[formation[0]].push(formation)
+        } else {
+            formationsGrouped[formation[0]] = [formation]
+        }
+    })
+
+    useEffect(() => {
+        if(null == selectedFormation) {
+            setSelectedFormation(formationsData[0]) // When formationData arrives we set the current formation to that
+        }
+    }, [formationsData]) // When formationData changes
+
     return (
         <div className="custom-select-wrapper">
             <div className="custom-select">
-                <div ref={selectButtonRef} className="select-trigger p-2 border border-gray-300 rounded-md shadow-lg" onClick={openSelectMenu}>
-                    <span>{selectTitle}</span>
-                    <div className="arrow"></div>
+                <div ref={selectButtonRef} className="squad-builder-select-trigger p-2 border border-gray-300 rounded-md shadow-lg flex items-center justify-center" onClick={openSelectMenu}>
+                    <span className="">{selectedFormation}</span>
+                    <div class="ml-1">
+                        <FontAwesomeIcon icon={faCaretDown} className="text-xl md:text-2xl text-black" />
+                    </div>
                 </div>
+         
                 {
                     isOpen &&
                     <div ref={selectBodyRef} className="squad-builder-custom-select-body bg-black text-white rounded-md absolute z-50">
                         <div className="p-2">
-                            <h4>Section 1</h4>
-                            <div className="grid grid-cols-3 md:grid-cols-4 gap-4">
-                                {Object.keys(formationsData).map((formation, index) => (
-                                    <div className="squad-builder-custom-select-item bg-blue-600 rounded-sm px-5" style={{ backgroundColor: selectTitle == formation && "red" }}
-                                    onClick={handleElementClick} key={index}>{formation}</div>
-                                ))}
-                            </div>
-                        </div>
-                        <hr></hr>
-                        <div className="p-2">
-                            <h4>Section 2</h4>
-                            <div className="grid grid-cols-3 md:grid-cols-4 gap-4">
-                                <div className="squad-builder-custom-select-item bg-blue-600 rounded-sm px-5">4-3-3</div>
-                                <div className="squad-builder-custom-select-item bg-blue-600 rounded-sm px-5">4-3-3(2)</div>
-                                <div className="squad-builder-custom-select-item bg-blue-600 rounded-sm px-5">4-3-3(2)</div>
-                                <div className="squad-builder-custom-select-item bg-blue-600 rounded-sm px-5">4-3-3(2)</div>
-                                <div className="squad-builder-custom-select-item bg-blue-600 rounded-sm px-5">4-3-3(2)</div>
-                            </div>
+                            {Object.keys(formationsGrouped).map((key, ind) => (
+                                <div key={ind}>
+                                    <h4 className="text-left text-lg mb-1">{key} ABT</h4>
+                                    <div className="grid grid-cols-3 md:grid-cols-4 gap-2 mb-4 mx-2">
+                                        {formationsGrouped[key].map((formation, index) => (
+                                            <div className="squad-builder-custom-select-item bg-blue-600 rounded-sm px-5" style={{ backgroundColor: selectedFormation == formation && "red" }}
+                                            onClick={handleElementClick} key={index}>{formation}</div>
+                                        ))}
+                                    </div>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 }
