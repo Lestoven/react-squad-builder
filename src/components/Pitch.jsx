@@ -85,7 +85,7 @@ export default function Pitch({ renderPositions, renderFormationSelector, availa
                     <div className="md:col-span-2 football-pitch flex items-center justify-center mt-1" id="pitch-content">
                         <div className="wrapper flex justify-content-center">
                             <div className="relative">
-                                <img src={footballPitchMobile} alt="Soccer Pitch" className="block xl:hidden h-screen object-cover" />
+                                <img src={footballPitchMobile} alt="Soccer Pitch" className="block xl:hidden" />
                                 <img src={footballPitchDesktop} alt="Soccer Pitch" className="hidden xl:block rounded-md h-screen object-cover p-2" />
                                 {renderPositions()}
                             </div>
