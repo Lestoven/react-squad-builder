@@ -11,8 +11,8 @@ The **"react-squad-builder"** library simplifies the creation of a football star
 * saving of the starting XI as an image,
 * easy to add additional translations
 
-![Squad Builder app](squad_builder.jpg)
-![Squad Builder saved staring XI](squad_builder2.png)
+![Squad Builder app](./images/squad_builder.jpg)
+![Squad Builder saved staring XI](./images/squad_builder2.png)
 
 ## **Important Details**
 ### Define the players
@@ -129,7 +129,7 @@ export default YourComponent
 ### **Define deafult jersey colors**
 This is the basic jersey coloring.
 
-![Deafult jersey](deafultJersey.jpg)
+![Deafult jersey](./images/deafultJersey.jpg)
 
 You are able to change the jersy's background color and the color of the text on the jersy by defining the "defaultJerseyColor" or the "defaultJerseyTextColor"
 
@@ -142,12 +142,12 @@ As the example shows, you can use both "rgb" and "hex" to define the default col
 
 Now the jersey look like this by default:
 
-![Deafult jersey](deafultJersey2.jpg)
+![Deafult jersey](./images/deafultJersey2.jpg)
 
 ### **Define deafult "formation text" color**
 By default, the library does not contain any background color, so the color of the "Pick a formation" text has a black color so that it appears on a white background. But it often happens that we want to place the component on a background of a different color, and then the text is not visible. Therefore, it is possible to set the color of the "Pick a formation" text to a default color.
 
-![Pick a formation](pickFormation.jpg)
+![Pick a formation](./images/pickFormation.jpg)
 
 You can define a default color with the prop "formationTextColor"
 
@@ -155,7 +155,7 @@ For example:
 ```jsx
 <SquadBuilder players={players} formationTextColor="#FF0000" lang="en"/>
 ```
-![Pick a formation](pickFormationRed.jpg)
+![Pick a formation](./images/pickFormationRed.jpg)
 
 ### **Define deafult language**
 There are 2 languages available currently for the library (English/Hungarian)
@@ -171,4 +171,4 @@ Or you can set the language to Hungarian:
 <SquadBuilder players={players} lang={"hu"}/>
 ```
 
-![Hungarian language set](huLang.jpg)
+![Hungarian language set](./images/huLang.jpg)
