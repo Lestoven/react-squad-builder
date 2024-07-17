@@ -3,6 +3,10 @@
 ## About the library
 The **"react-squad-builder"** library simplifies the creation of a football starting XI. It offers a pitch featuring players and a bench. Users can easily add or swap players on the pitch. Simply include the component and define the players, the component handles the rest. *The library is responsive, which means it also works properly on mobile devices.*
 
+
+Demo: https://6dks2g-5173.csb.app/ <br>
+Demo setup: https://codesandbox.io/p/devbox/react-squad-builder-6dks2g?file=%2Fsrc%2FApp.jsx%3A73%2C5
+
 ## The library provides:
 * various formations,
 * customizable jersey color,
