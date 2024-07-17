@@ -1,6 +1,7 @@
 import { Fragment } from 'react'
 import { getUserLanguage, translate } from './i18n/translate'
 import PositionOnPitch from './PositionOnPitch.jsx'
+import CustomSelect from './CustomSelect.jsx'
 
 export function renderPositions(playerPositions, selectedPlayers, selectedPlayerFromBench,
     removePlayerFromPitch, screenWidth, handlePositionClick, shirtDisplayType, colorSettings, lang) {
@@ -31,6 +32,7 @@ export function renderPositions(playerPositions, selectedPlayers, selectedPlayer
 
 export function renderFormationSelector(handleFormationChange, formationsData) { // rendering the formation selector when user can change the current formation
     return (
+        <>
         <select onChange={handleFormationChange} id="countries" className="mt-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
                 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white 
                 dark:focus:ring-blue-500 dark:focus:border-blue-500">
@@ -38,5 +40,7 @@ export function renderFormationSelector(handleFormationChange, formationsData) {
                         <option key={index} value={formation}>{formation}</option>
                     ))}
         </select>
+        <CustomSelect formationsData={formationsData}/>
+        </>
     )
 }
