@@ -14,8 +14,8 @@ export function renderPositions(playerPositions, selectedPlayers, selectedPlayer
                 <Fragment key={index}>
                     <div key={index} className="player-on-pitch absolute cursor-pointer"
                         style={{
-                            bottom: `${screenWidth <= 768 ? position.bottom["mobile"] : position.bottom["desktop"]}%`,
-                            right: `${screenWidth <= 768 ? position.right["mobile"] : position.right["desktop"]}%`,
+                            bottom: `${screenWidth <= 1280 ? position.bottom["mobile"] : position.bottom["desktop"]}%`,
+                            right: `${screenWidth <= 1280 ? position.right["mobile"] : position.right["desktop"]}%`,
                         }}
                         onClick={() => handlePositionClick(positionType, index)} >
 
