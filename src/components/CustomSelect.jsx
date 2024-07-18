@@ -59,7 +59,7 @@ export default function CustomSelect({formationsData, handleFormationChange}) {
     return (
         <div className="custom-select-wrapper">
             <div className="custom-select">
-                <div ref={selectButtonRef} className="squad-builder-select-trigger p-2 border border-gray-300 rounded-md shadow-lg flex items-center justify-center" onClick={openSelectMenu}>
+                <div ref={selectButtonRef} className="bg-white squad-builder-select-trigger p-2 border border-gray-300 rounded-md shadow-lg flex items-center justify-center" onClick={openSelectMenu}>
                     <span className="">{selectedFormation}</span>
                     <div class="ml-1">
                         <FontAwesomeIcon icon={faCaretDown} className="text-xl md:text-2xl text-black" />
