@@ -11,7 +11,7 @@ import footballPitchMobile from "./assets/football_pitch_mobile.svg"
 import footballPitchDesktop from "./assets/football_pitch_cropped.png"
 
 export default function Pitch({ renderPositions, renderFormationSelector, availablePlayers, selectedPlayers, selectedPlayerFromBench,
-    setSelectedPlayerFromBench, isToastOpen, setIsToastOpen, setSettingsModalOpen, formationTextColor, lang  }) {
+    setSelectedPlayerFromBench, isToastOpen, setIsToastOpen, setSettingsModalOpen, formationTextColor, lang }) {
 
     const addPlayerFromBench = (player) => {
         setSelectedPlayerFromBench(player)
