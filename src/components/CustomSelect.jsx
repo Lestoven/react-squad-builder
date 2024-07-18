@@ -75,7 +75,7 @@ export default function CustomSelect({formationsData, handleFormationChange}) {
                                     <h4 className="text-left text-lg mb-1">{key} ABT</h4>
                                     <div className="grid grid-cols-3 md:grid-cols-4 gap-2 mb-4 mx-2">
                                         {formationsGrouped[key].map((formation, index) => (
-                                            <div className="squad-builder-custom-select-item bg-blue-600 rounded-sm px-5" style={{ backgroundColor: selectedFormation == formation && "red" }}
+                                            <div className="squad-builder-custom-select-item bg-blue-600 rounded-sm px-2 py-1" style={{ backgroundColor: selectedFormation == formation && "red" }}
                                             onClick={handleElementClick} key={index}>{formation}</div>
                                         ))}
                                     </div>
